@@ -242,8 +242,14 @@ namespace SpaceNavigatorDriver {
 			RuntimeEditorNav = GUILayout.Toggle(RuntimeEditorNav, "Runtime Editor Navigation");
 			EditorGUI.BeginDisabledGroup(!RuntimeEditorNav);
 			RuntimeEditorNavSuspendOnGameViewFocus = GUILayout.Toggle(RuntimeEditorNavSuspendOnGameViewFocus, "Suspend on GameView focus");
-			FlySwapRotationAxesYAndZ = GUILayout.Toggle(FlySwapRotationAxesYAndZ, "Swap Y and Z rotation axes in Fly mode");
 			SuspendOnLostFocus = GUILayout.Toggle(SuspendOnLostFocus, "Suspend when loosing focus");
+			EditorGUI.EndDisabledGroup();
+
+			GUILayout.EndHorizontal();
+
+			GUILayout.BeginHorizontal();
+			EditorGUI.BeginDisabledGroup(!RuntimeEditorNav);
+			FlySwapRotationAxesYAndZ = GUILayout.Toggle(FlySwapRotationAxesYAndZ, "Swap Y and Z rotation axes in Fly mode");
 			EditorGUI.EndDisabledGroup();
 			GUILayout.EndHorizontal();
 			
@@ -477,7 +483,7 @@ namespace SpaceNavigatorDriver {
 			// Runtime Editor Navigation
 			RuntimeEditorNav = PlayerPrefs.GetInt("RuntimeEditorNav", 1) == 1;
 			RuntimeEditorNavSuspendOnGameViewFocus = PlayerPrefs.GetInt("RuntimeEditorNavWithFocussedGameView", 1) == 1;
-			FlySwapRotationAxesYAndZ = PlayerPrefs.GetInt("FlySwapRotationAxesYAndZ", 1) == 1;
+			FlySwapRotationAxesYAndZ = PlayerPrefs.GetInt("FlySwapRotationAxesYAndZ", 0) == 1;
 			SuspendOnLostFocus = PlayerPrefs.GetInt("SuspendOnLostFocus", 1) == 1;
 			// Axis Inversions
 			ReadAxisInversions(ref FlyInvertTranslation, ref FlyInvertRotation, "Fly");
