@@ -133,7 +133,7 @@ namespace SpaceNavigatorDriver
 
         static void Fly(SceneView sceneView, Vector3 translationInversion, Vector3 rotationInversion)
         {
-            if (SceneView.in2DMode) return;
+            if (sceneView.in2DMode) return;
             
             SyncRigWithScene();
 
