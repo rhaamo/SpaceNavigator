@@ -432,7 +432,7 @@ namespace SpaceNavigatorDriver {
 			PlayerPrefs.SetInt("RuntimeEditorNav", RuntimeEditorNav ? 1 : 0);
 			PlayerPrefs.SetInt("RuntimeEditorNavWithFocussedGameView", RuntimeEditorNavSuspendOnGameViewFocus ? 1 : 0);
 			PlayerPrefs.SetInt("FlySwapRotationAxesYAndZ", FlySwapRotationAxesYAndZ ? 1 : 0);
-			PlayerPrefs.SetInt("SuspendOnLostFocus", SuspendOnLostFocus ? 1 : 0)
+			PlayerPrefs.SetInt("SuspendOnLostFocus", SuspendOnLostFocus ? 1 : 0);
 			// Axis Inversions
 			WriteAxisInversions(FlyInvertTranslation, FlyInvertRotation, "Fly");
 			WriteAxisInversions(OrbitInvertTranslation, OrbitInvertRotation, "Orbit");
